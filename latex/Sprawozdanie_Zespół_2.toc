@@ -1,11 +1,13 @@
 \babel@toc {polish}{}
 \contentsline {section}{\numberline {1}Zagadnienia i za\IeC {\l }o\IeC {\.z}enia projektowe}{3}
 \contentsline {section}{\numberline {2}Identyfikacja obiektu}{3}
-\contentsline {section}{\numberline {3}Struktura}{3}
-\contentsline {section}{\numberline {4}Strojenie PID}{3}
-\contentsline {subsection}{\numberline {4.1}f) }{3}
-\contentsline {section}{\numberline {5}Testowanie}{4}
-\contentsline {subsection}{\numberline {5.1}Testowanie zmiany warto\IeC {\'s}ci zadanej temperatury}{4}
-\contentsline {subsection}{\numberline {5.2}Testowanie zmiany zak\IeC {\l }\IeC {\'o}cenia}{5}
-\contentsline {subsection}{\numberline {5.3}Konkurs}{5}
-\contentsline {section}{\numberline {6}Wnioski}{6}
+\contentsline {subsection}{\numberline {2.1}Identyfikacja obiektu - grza\IeC {\l }ka}{3}
+\contentsline {subsection}{\numberline {2.2}Identyfikacja obiektu - wentylator}{8}
+\contentsline {section}{\numberline {3}Struktura}{13}
+\contentsline {section}{\numberline {4}Strojenie PID}{16}
+\contentsline {subsection}{\numberline {4.1}f) }{16}
+\contentsline {section}{\numberline {5}Testowanie}{17}
+\contentsline {subsection}{\numberline {5.1}Testowanie zmiany warto\IeC {\'s}ci zadanej temperatury}{17}
+\contentsline {subsection}{\numberline {5.2}Testowanie zmiany zak\IeC {\l }\IeC {\'o}cenia}{19}
+\contentsline {subsection}{\numberline {5.3}Konkurs}{21}
+\contentsline {section}{\numberline {6}Wnioski}{22}
