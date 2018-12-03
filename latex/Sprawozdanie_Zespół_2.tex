@@ -42,7 +42,7 @@
 
 \newpage
 \section{Zagadnienia i założenia projektowe}
-Postawione przed nami zadanie polegało na zaprojektowaniu regulatora PID, który steruje obiektem grzewczym, w naszym przypadku będzie to grzałka. Na obiekt działają zakłócenia w postaci wiatru generowanego przez wiatrak. Punkt pracy jest ustawiony na $30 \%$ mocy grzałki co daje nam stałą temperaturę w okolicach \ang{38}. Projekt regulatora i testy dla obiektu (zmiana zakłóceń i wartości zadannej) zostały przeprowadzone przy użyciu programów dostarczonych przez firmę Ovation. Do zebrania odpowiedzi skokowej wykorzystane zostało oprogramowanie MATLAB. Charakterystyka obiektu odpowiadała obiektowi 1 na 1 plus 1 (1 wejście, 1 wyjście i 1 zakłócenie). Regulator miał za zadanie utrzymywać zadaną wartość dla grzałki przy zmiennych wartościach zakłóceń. Ocena jakości regulacji polega na obliczaniu błędu średniokwadratowego dla sygnału sterującego w porównaniu do wartości zadanej. Najlepszy regulator został wyłoniony na podstawie konkursu na ostatnich zajęciach. 
+Postawione przed nami zadanie polegało na zaprojektowaniu regulatora PID, który steruje obiektem grzewczym, w naszym przypadku będzie to grzałka. Na obiekt działają zakłócenia w postaci wiatru generowanego przez wentylator. Punkt pracy jest ustawiony na $30 \%$ mocy grzałki co daje nam stałą temperaturę w okolicach \ang{38}. Projekt regulatora i testy dla obiektu (zmiana zakłóceń i wartości zadannej) zostały przeprowadzone przy użyciu programów dostarczonych przez firmę Ovation. Do zebrania odpowiedzi skokowej wykorzystane zostało oprogramowanie MATLAB. Charakterystyka obiektu odpowiadała obiektowi 1 na 1 plus 1 (1 wejście, 1 wyjście i 1 zakłócenie). Regulator miał za zadanie utrzymywać zadaną wartość dla grzałki przy zmiennych wartościach zakłóceń. Ocena jakości regulacji polega na obliczaniu błędu średniokwadratowego dla sygnału sterującego w porównaniu do wartości zadanej. Najlepszy regulator został wyłoniony na podstawie konkursu na ostatnich zajęciach. 
 \section{Identyfikacja obiektu}
 Jednym z pierwszych zadań na laboratorium było poprawne zidentyfikowanie obiektu. Ważne było, aby zbadać wpływ zarówno sygnału sterującego, jak i zakłócenia. Otrzymanie modeli jest konieczne, gdyż umożliwia ono dodanie członu odprzęgającego zakłócenia.\\
 W celu dokonania identyfikacji obiektu zebrane zostały cztery odpowiedzi skokowe:\\
@@ -236,11 +236,7 @@ Wyjściem z sumatora (którego wejściami jest wartość z członu odsprzęgają
 W Control Builderze stworzyliśmy logikę przedstawiona na powyższym rysunku. Następnie uruchomiliśmy ją za pomocą Signal Diagramu i tam zmienialiśmy nastawy regulatora PID i dopracowaliśmy człon odsprzęgający. Wartośc zadaną zmienialiśmy w naszej logice w Signal Diagramie, zakłócenie zmieniane było w logice przygotowanej przez prowadzącego także w Signal Diagramie. Za pomocą aplikacji Trend obserwowaliśmy istotne dla nas sygnały (bieżacą temperaturę, zadaną temperaturę, sygnał sterujący grzałką, sygnał sterujący wentylatora).
 
 \section{Strojenie PID}
-
-\subsection{f) }
-\begin{figure}[h!]
-%\includegraphics[scale=0.55, center]{sciezka do pliku}
-\end{figure}
+Do wyznaczenia parametrów regulatora PID użyliśmy udostępnionych nam przez prowadzącego plików. Posłużyliśmy się głównie plikiem \verb|classPID.m| w którym został zaimplementowany regulator PID. Do stowrzenia obiektu typu \textit{classPID} używamy konstruktora, który jako argumenty przyjmuje wartości członów regulatora PID (\textit{classPID(K, Ti, Kd, Td, Tp, Hlim, Llim, Dir, ManVal)}). ????????????? Parametry PID mogliśmy wyznaczyć znając transmitancję obiektu. ??????? Następnie postępowaliśmy według zasad metody Zieglera - Nicholsa, aby wyznaczyć początkowe wartości dla członów w regulaotrze PID. Symulując w programie MATLAB zachowanie konkretnej transmitancji ulepszaliśmy nasze nastawy regulatora, tak żeby wybrane przez nas wskaźniki jakości (czas regulacji, występowanie oscylacji, czas dążenia do wartości zadanej) były optymalne. W ten sposób dokonaliśmy łagodnego przejścia z metody Zieglera-Nicholsa na metodę inżynierską. 
 \newpage
 \section{Testowanie}
 Kolejnym etapem było testowanie działania stworzonej pętli regulacji poprzez sprawdzenie reakcji na zmianę temperatury zadanej oraz zmianę wartości sygnału sterującego dla wentylatora. 
