@@ -208,13 +208,13 @@ Aktualna wartość temperatury była pobierana przez punkt ST1 MODBUS TEMP1.
 
 W bloku PID ustawiliśmy nastawy regulatora PID zaprezentowane na rysunku  \ref{fig:12}. Zostały one wyznaczone przy strojeniu regulatora PID w Matlabie, a następnie dopracowane przez zmienianie ich w Signal Diagramie.
 
-Wyjście bloku PID to wyznaczone sterowanie. Częścią zadania było także uwzględnienie w pętli regulacji wpływającego na obiekt   zakłócenia - do wyznaczonego w bloku PID sterowania trzeba dodać (blok SUM) odsprzęganie zakłócenia.
+Wyjście bloku PID to wyznaczone sterowanie. Częścią zadania było także uwzględnienie w pętli regulacji wpływającego na obiekt   zakłócenia - do wyznaczonego w bloku PID sterowania trzeba dodać (blok SUM) odprzęganie zakłócenia.
 
-Aby tego dokonać należy dodać człon odsprzęgający za pomocą bloku LEADLAG wyliczający wartość jaką należy odjąć/dodać, żeby wyeliminować wpływ zakłócenia. Jako wejście do bloku LEADLAG dajemy wartość punktu ST1 MODBUS FAN4, czyli aktualne sterowanie wentylatora. (Na rysunku \ref{fig:schemat} do bloku LEADLAG dodajemy wartośc sumy z bloku Avalgen i ST1 MODBUS FAN4 ale wartość dla Avalgena jest ustawiona na 0.) 
+Aby tego dokonać należy dodać człon odprzęgający za pomocą bloku LEADLAG wyliczający wartość jaką należy odjąć/dodać, żeby wyeliminować wpływ zakłócenia. Jako wejście do bloku LEADLAG dajemy wartość punktu ST1 MODBUS FAN4, czyli aktualne sterowanie wentylatora. (Na rysunku \ref{fig:schemat} do bloku LEADLAG dodajemy wartośc sumy z bloku Avalgen i ST1 MODBUS FAN4 ale wartość dla Avalgena jest ustawiona na 0.) 
 
 Blok LEADLAG zawiera wyliczoną transmitancję ze wzoru $-\frac{T_z}{T_0}$, gdzie $T_z$ to transmitancja zakłócenia, a $T_0$ to transmitancja obiektu. Blok LEADLAG miał nastawy zaprezentowane na rysunku \ref{fig:12}.
 
-Wyjściem z sumatora (którego wejściami jest wartość z członu odsprzęgającego i wartość wyjścia z regulatora) jest sterowanie, które będzie wysłane na obiekt.
+Wyjściem z sumatora (którego wejściami jest wartość z członu odprzęgającego i wartość wyjścia z regulatora) jest sterowanie, które będzie wysłane na obiekt.
 
 \begin{figure}[H]
 	\centering
@@ -233,14 +233,56 @@ Wyjściem z sumatora (którego wejściami jest wartość z członu odsprzęgają
 	\end{figure}
 
 
-W Control Builderze stworzyliśmy logikę przedstawiona na powyższym rysunku. Następnie uruchomiliśmy ją za pomocą Signal Diagramu i tam zmienialiśmy nastawy regulatora PID i dopracowaliśmy człon odsprzęgający. Wartośc zadaną zmienialiśmy w naszej logice w Signal Diagramie, zakłócenie zmieniane było w logice przygotowanej przez prowadzącego także w Signal Diagramie. Za pomocą aplikacji Trend obserwowaliśmy istotne dla nas sygnały (bieżacą temperaturę, zadaną temperaturę, sygnał sterujący grzałką, sygnał sterujący wentylatora).
+W Control Builderze stworzyliśmy logikę przedstawiona na powyższym rysunku. Następnie uruchomiliśmy ją za pomocą Signal Diagramu i tam zmienialiśmy nastawy regulatora PID i dopracowaliśmy człon odprzęgający. Wartośc zadaną zmienialiśmy w naszej logice w Signal Diagramie, zakłócenie zmieniane było w logice przygotowanej przez prowadzącego także w Signal Diagramie. Za pomocą aplikacji Trend obserwowaliśmy istotne dla nas sygnały (bieżacą temperaturę, zadaną temperaturę, sygnał sterujący grzałką, sygnał sterujący wentylatora).
 
 \section{Strojenie PID}
 W pierwszym kroku transmitancje, które uzyskaliśmy dokonując identyfikacji obiketu podczas laboratorium zostały przez nas przekształcone na równania różnicowe. Dzięki temu mogliśmy zaimplementować regulator PID wraz z obiektem i dokonywać symulacji w programie MATLAB. W ten sposób mogliśmy dobrać parametr K, który pozwolił na zadowalającą jakość regulacji. Dobierając wzmocnienie dla regulatora PID człony całkujący i różniczkujący zostały wyłączone. Następnie ulepszając nastawy regulatora postępowaliśmy według zasad metody inżynierskiej, tak żeby wybrane przez nas wskaźniki jakości (czas regulacji, występowanie oscylacji, czas dążenia do wartości zadanej) były optymalne.
-\\Do symulacji regulatora PID użyliśmy udostępnionych nam przez prowadzącego plików. Posłużyliśmy się głównie plikiem \verb|classPID.m| w którym został zaimplementowany regulator PID. Do stworzenia obiektu typu \textit{classPID} używamy konstruktora, który jako argumenty przyjmuje wartości członów regulatora (\textit{classPID(K, Ti, Kd, Td, Tp, Hlim, Llim, Dir, ManVal)}). 
-\\W celu prezentacji wyników regulacji stworzyliśmy własny skrypt w programie MATLAB. Zadawaliśmy wartość zadaną dla regulatora i obserwowaliśmy jak zachowuje się jego wyjście. Musiało ono jak najszybciej dojść do wartości zadanej i ustabilizować się w krótkim czasie. Dzięki takiej graficznej prezentacji wyników, mogliśmy sprawnie i precyzyjnie dobierać paramtery PID. Wymagane obliczenia do symulacji działania PID były wykonywane na podstawie równań matematycznych opisujących regulator PID w funkcji \textit{calc()}.
-\\Tak wyznaczone nastawy PID zostały przez nas użyte do regulacji rzeczywistego obiektu jakim była grzałka. Dokonaliśmy jeszcze małych zmian parametrów PID, ponieważ obiekt modelowany nie oddaje w pełni zachowania obiektu w świecie rzeczywistym. Jak się okazało podczas dalszych testów na stanowisku grzejąco-chłodzącym zmiany te wpłynęły pozytywnie na prędkość osiągania zadawanego punktu pracy przez grzałkę. 
-\newpage
+
+Do symulacji regulatora PID użyliśmy udostępnionych nam przez prowadzącego plików. Posłużyliśmy się głównie plikiem \verb|classPID.m| w którym został zaimplementowany regulator PID. Do stworzenia obiektu typu \textit{classPID} używamy konstruktora, który jako argumenty przyjmuje wartości członów regulatora (\textit{classPID(K, Ti, Kd, Td, Tp, Hlim, Llim, Dir, ManVal)}).
+ 
+W celu prezentacji wyników regulacji stworzyliśmy własny skrypt w programie MATLAB. Zadawaliśmy wartość zadaną dla regulatora i obserwowaliśmy jak zachowuje się jego wyjście. Musiało ono jak najszybciej dojść do wartości zadanej i ustabilizować się w krótkim czasie. Dzięki takiej graficznej prezentacji wyników, mogliśmy sprawnie i precyzyjnie dobierać paramtery PID. Wymagane obliczenia do symulacji działania PID były wykonywane na podstawie równań matematycznych opisujących regulator PID w funkcji \textit{calc()}.
+
+Najpierw doprowadziliśmy układ do skraju stabilności objawiało się to niegasnącymi oscylacjami.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pid_krytyczny.png}
+	\caption{}
+\end{figure}
+Natępnie po ustawieniu początkowych nastawów szukliśmy wartości dla parametrów dla których jakość regulacji i przebiegi sygnałów były najlepsze. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pid_1.png}
+	\caption{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pid_2.png}
+	\caption{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pid_3.png}
+	\caption{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pid_4.png}
+	\caption{}
+\end{figure}
+
+Jak widzimy wyjście obiketu miało coraz mniejsze przeregulowanie dla rosnących wartości $T_{i}$. Przbieg sygnału sterującego zachowywał się praktycnie tak samo dla różnych $T_{i}$. Ostatecznie do naszego regulatora wybraliśmy wartość $T_{i} = 20$.
+
+Tak wyznaczone nastawy PID zostały przez nas użyte do regulacji rzeczywistego obiektu jakim była grzałka. Dokonaliśmy jeszcze małych zmian parametrów PID, ponieważ obiekt modelowany nie oddaje w pełni zachowania obiektu w świecie rzeczywistym. Jak się okazało podczas dalszych testów na stanowisku grzejąco-chłodzącym zmiany te wpłynęły pozytywnie na prędkość osiągania zadawanego punktu pracy przez grzałkę. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{pid_ostateczny.png}
+	\caption{}
+\end{figure}
+
 \section{Testowanie}
 Kolejnym etapem było testowanie działania stworzonej pętli regulacji poprzez sprawdzenie reakcji na zmianę temperatury zadanej oraz zmianę wartości sygnału sterującego dla wentylatora. 
 
@@ -276,7 +318,7 @@ Najpierw wykonaliśmy testy zmiany wartości zadanej temperatury i obserwowaliś
 	\label{fig:sterowanie3843}
 \end{figure}
 
-Porównując wykresy możemy zauważyć, że obiekt szybciej osiąga zadaną temperaturę jeżeli wykonujemy skok do w górę do wartości zadanej (zwiększamy zadaną temperaturę) niż gdy zmniejszamy wartość zadaną (obnizamy zadaną temperaturę). Obiekt wolniej się chłodzi niż nagrzewa, co wynika z tego, że sterujemy tylko grzałką: przy zmniejszaniu temperatury czekamy aż obiekt odda ciepło do otoczenia przy obniżonym sterowaniu grzałki, podwyższając temperaturę podwyższamy po prostu wartość sterowania grzałki.  
+Porównując wykresy możemy zauważyć, że obiekt szybciej osiąga zadaną temperaturę jeżeli wykonujemy skok zadanej wartości w górę do wartości zadanej (zwiększamy zadaną temperaturę) niż gdy zmniejszamy wartość zadaną (obnizamy zadaną temperaturę). Obiekt wolniej się chłodzi niż nagrzewa, co wynika z tego, że sterujemy tylko grzałką: przy zmniejszaniu temperatury czekamy aż obiekt odda ciepło do otoczenia przy obniżonym sterowaniu grzałki, podwyższając temperaturę podwyższamy po prostu wartość sterowania grzałki.  
 
 Wynika to także z dobranego regulatora. Spadek wartości sygnału wyjściowego obiektu dla zmniejszonej wartosci zadanej temperatury na początku jest szybki (Rysunki: \ref{fig:SKOK_STEROWANIA}, \ref{fig:sterowanie4337}), ale w pobliżu wartości zadanej prędkość zniejszania się wartości temperatury znacząco spada. Dzięki temu unikamy przeregulowania i oscylacji. Podobnie jest przy wzroście sygnału wyjściowego obiektu dla zwiększonej wartosci zadanej temperatury  (Rysunki: \ref{fig:wiatrak20temp3841}, \ref{fig:sterowanie3843} przy czym tutaj można zauważyć niewielkie przeregulowanie. 
 
@@ -306,9 +348,9 @@ Jako że wentylator działa szybciej niż grzałka, co widać w ich transmitancj
 
 Gdy zwiękaszymy nawiew wentylatora (Rysunek \ref{fig:zaklocenia2060} - większe sterowanie), temperatura zmniejsza się. Wyliczona wartośc sterowania gwałtownie rośnie,  potem zaczyna maleć, żeby na koniec ustabilizować się na wartości większej niż początkowa (bo cały czas musi niwelować większe zakłócenie). Po czasie równym opóźnieniu grzałki, grzałka zaczyna reagować na zmianę zakłócenia i jej temperatura ponownie osiąga wartość zadaną.
 
-Gdy zmniejszymy nawiew wentylatora (Rysunek \ref{fig:zaklocenia6030} - mniejsze sterowanie), temperatura zwiększa się. Wyliczona wartośc sterowania gwałtownie maleje, potem zaczyna rosnąć, żeby na koniec ustabilizować się na wartości mniejszej niż początkowa (bo cały czas musi niwelować mniejsze zakłócenie niż na początku). Warto zwrócić uwagę, że nie da się zmniejszyć sterowania do wartości mniejszej niż 0. Po czasie równym opóźnieniu grzałki, grzałka zaczyna reagować na zmianę zakłócenia i ponownie osiągamy zadaną wartość temperatury.
+Gdy zmniejszymy nawiew wentylatora (Rysunek 20 - mniejsze sterowanie), temperatura zwiększa się. Wyliczona wartośc sterowania gwałtownie maleje, potem zaczyna rosnąć, żeby na koniec ustabilizować się na wartości mniejszej niż początkowa (bo cały czas musi niwelować mniejsze zakłócenie niż na początku). Warto zwrócić uwagę, że nie da się zmniejszyć sterowania do wartości mniejszej niż 0. Po czasie równym opóźnieniu grzałki, grzałka zaczyna reagować na zmianę zakłócenia i ponownie osiągamy zadaną wartość temperatury.
 
-Z powodu nieliniowości wentylatora (innego zachowywania się przy skoku w dół, a innego przy skoku w górę), podjęliśmy decyzję faworyzującą zmianę zakłócenia w górę. Transmitancja przy odsprzęganiu jest bliższa transmitancji wentylatora wyliczonej przy wzroście zakłócenia. Z tego powodu lepiej działa odsprzęganie zakłócenia, gdy wartość sterowania wentylatorem rośnie. Można to zauważyć na rysunkach, ponieważ gdy wartość sterowania wentylatorem spada, temperatura przy stabilizowaniu się na początku lekko oscyluje. Gdy wartość sterowania wentylatorem rośnie - szybciej dochodzimy do wartości zadanej i nie występują oscylacje. Dobrana transmitancja odsprzęgajaca jest wystarczająca do niwelowania nie za dużych zakłóceń z wentylatora.
+Z powodu nieliniowości wentylatora (innego zachowywania się przy skoku w dół, a innego przy skoku w górę), podjęliśmy decyzję faworyzującą zmianę zakłócenia w górę. Transmitancja przy odprzęganiu jest bliższa transmitancji wentylatora wyliczonej przy wzroście zakłócenia. Z tego powodu lepiej działa odprzęganie zakłócenia, gdy wartość sterowania wentylatorem rośnie. Można to zauważyć na rysunkach, ponieważ gdy wartość sterowania wentylatorem spada, temperatura przy stabilizowaniu się na początku lekko oscyluje. Gdy wartość sterowania wentylatorem rośnie - szybciej dochodzimy do wartości zadanej i nie występują oscylacje. Dobrana transmitancja odprzęgajaca jest wystarczająca do niwelowania nie za dużych zakłóceń z wentylatora.
 
 
 \subsection{Konkurs}

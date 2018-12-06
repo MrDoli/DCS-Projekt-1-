@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.14)  6 DEC 2018 21:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.14)  6 DEC 2018 22:05
 entering extended mode
 **./Sprawozdanie_Zespół_2.tex
 (Sprawozdanie_Zespół_2.tex
@@ -1323,103 +1323,131 @@ File: 2.jpg Graphic file (type jpg)
 Package pdftex.def Info: 2.jpg  used on input line 230.
 (pdftex.def)             Requested size: 151.34477pt x 284.52756pt.
  [15 <./schemat.png> <./1.jpg> <./2.jpg>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 240.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 241.
 
  ("F:\Program Files (x86)\Latex\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
+<pid_krytyczny.png, id=82, 421.51477pt x 316.18124pt>
+File: pid_krytyczny.png Graphic file (type png)
+<use pid_krytyczny.png>
+Package pdftex.def Info: pid_krytyczny.png  used on input line 248.
+(pdftex.def)             Requested size: 409.71692pt x 307.3371pt.
+
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 248--253
+<pid_1.png, id=87, 421.51477pt x 316.18124pt>
+File: pid_1.png Graphic file (type png)
+<use pid_1.png>
+Package pdftex.def Info: pid_1.png  used on input line 254.
+(pdftex.def)             Requested size: 409.71692pt x 307.3371pt.
+ [17 <./pid_krytyczny.png (PNG copy)>]
+<pid_2.png, id=91, 421.51477pt x 316.18124pt>
+File: pid_2.png Graphic file (type png)
+<use pid_2.png>
+Package pdftex.def Info: pid_2.png  used on input line 260.
+(pdftex.def)             Requested size: 409.71692pt x 307.3371pt.
+<pid_3.png, id=92, 421.51477pt x 316.18124pt>
+File: pid_3.png Graphic file (type png)
+<use pid_3.png>
+Package pdftex.def Info: pid_3.png  used on input line 266.
+(pdftex.def)             Requested size: 409.71692pt x 307.3371pt.
+ [18 <./pid_1.png (PNG copy)> <./pid_2.png (PNG copy)>]
+<pid_4.png, id=96, 421.51477pt x 316.18124pt>
+File: pid_4.png Graphic file (type png)
+<use pid_4.png>
+Package pdftex.def Info: pid_4.png  used on input line 272.
+(pdftex.def)             Requested size: 409.71692pt x 307.3371pt.
+ [19 <./pid_3.png (PNG copy)> <./pid_4.png (PNG copy)>]
+<pid_ostateczny.png, id=101, 421.51477pt x 316.18124pt>
+File: pid_ostateczny.png Graphic file (type png)
+<use pid_ostateczny.png>
+Package pdftex.def Info: pid_ostateczny.png  used on input line 282.
+(pdftex.def)             Requested size: 409.71692pt x 307.3371pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--295
 
  []
 
-<SKOK_STEROWANIA.png, id=86, 1139.457pt x 562.5015pt>
+[20 <./pid_ostateczny.png (PNG copy)>]
+<SKOK_STEROWANIA.png, id=105, 1139.457pt x 562.5015pt>
 File: SKOK_STEROWANIA.png Graphic file (type png)
 <use SKOK_STEROWANIA.png>
-Package pdftex.def Info: SKOK_STEROWANIA.png  used on input line 256.
+Package pdftex.def Info: SKOK_STEROWANIA.png  used on input line 298.
 (pdftex.def)             Requested size: 409.71692pt x 202.26006pt.
-<sterowanie4337.png, id=87, 1416.04031pt x 734.745pt>
+<sterowanie4337.png, id=106, 1416.04031pt x 734.745pt>
 File: sterowanie4337.png Graphic file (type png)
 <use sterowanie4337.png>
-Package pdftex.def Info: sterowanie4337.png  used on input line 262.
+Package pdftex.def Info: sterowanie4337.png  used on input line 304.
 (pdftex.def)             Requested size: 409.71692pt x 212.5885pt.
-<wiatrak20temp3841.png, id=88, 1430.34375pt x 698.61pt>
+<wiatrak20temp3841.png, id=107, 1430.34375pt x 698.61pt>
 File: wiatrak20temp3841.png Graphic file (type png)
 <use wiatrak20temp3841.png>
-Package pdftex.def Info: wiatrak20temp3841.png  used on input line 268.
+Package pdftex.def Info: wiatrak20temp3841.png  used on input line 310.
 (pdftex.def)             Requested size: 409.71692pt x 200.10794pt.
-[17 <./SKOK_STEROWANIA.png>]
-<sterowanie3843.png, id=93, 1139.457pt x 589.0005pt>
+<sterowanie3843.png, id=108, 1139.457pt x 589.0005pt>
 File: sterowanie3843.png Graphic file (type png)
 <use sterowanie3843.png>
-Package pdftex.def Info: sterowanie3843.png  used on input line 274.
+Package pdftex.def Info: sterowanie3843.png  used on input line 316.
 (pdftex.def)             Requested size: 409.71692pt x 211.78836pt.
- [18 <./sterowanie4337.png> <./wiatrak20temp3841.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 288--291
+ [21 <./SKOK_STEROWANIA.png> <./sterowanie4337.png>] [22 <./wiatrak20temp3841.p
+ng> <./sterowanie3843.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 330--333
 
  []
 
-[19 <./sterowanie3843.png>]
-<zaklocenia2060.png, id=104, 1140.6615pt x 557.6835pt>
+<zaklocenia2060.png, id=119, 1140.6615pt x 557.6835pt>
 File: zaklocenia2060.png Graphic file (type png)
 <use zaklocenia2060.png>
-Package pdftex.def Info: zaklocenia2060.png  used on input line 294.
+Package pdftex.def Info: zaklocenia2060.png  used on input line 336.
 (pdftex.def)             Requested size: 409.71692pt x 200.3149pt.
-<zaklocenie6030.png, id=105, 1152.7065pt x 556.479pt>
+<zaklocenie6030.png, id=120, 1152.7065pt x 556.479pt>
 File: zaklocenie6030.png Graphic file (type png)
 <use zaklocenie6030.png>
-Package pdftex.def Info: zaklocenie6030.png  used on input line 300.
+Package pdftex.def Info: zaklocenie6030.png  used on input line 342.
 (pdftex.def)             Requested size: 409.71692pt x 197.79343pt.
- [20 <./zaklocenia2060.png> <./zaklocenie6030.png>]
-
-LaTeX Warning: Reference `fig:zaklocenia6030' on page 21 undefined on input lin
-e 309.
-
-<konkurs.png, id=111, 1429.59094pt x 743.02594pt>
+[23 <./zaklocenia2060.png>] [24 <./zaklocenie6030.png>]
+<konkurs.png, id=129, 1429.59094pt x 743.02594pt>
 File: konkurs.png Graphic file (type png)
 <use konkurs.png>
-Package pdftex.def Info: konkurs.png  used on input line 319.
+Package pdftex.def Info: konkurs.png  used on input line 361.
 (pdftex.def)             Requested size: 409.71692pt x 212.94371pt.
-[21 <./konkurs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 330--335
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--377
 
  []
 
-[22] (Sprawozdanie_Zespół_2.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[25 <./konkurs.png>] [26] (Sprawozdanie_Zespół_2.aux) ) 
 Here is how much of TeX's memory you used:
- 18014 strings out of 493303
- 348248 string characters out of 3133669
- 390359 words of memory out of 3000000
- 21328 multiletter control sequences out of 15000+200000
+ 18043 strings out of 493303
+ 348697 string characters out of 3133669
+ 391359 words of memory out of 3000000
+ 21351 multiletter control sequences out of 15000+200000
  545035 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,10n,96p,10398b,550s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
-\ectt1200.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
-n\ec\dpi600\ecrm1000.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Marcin\AppData\Local\M
-iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Marcin\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\
-Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk>
+ <C:\Users\Marcin\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <C:\Users\
+Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk>
  <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-crm1440.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ecrm2074.pk><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi12.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmmi6.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr6.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr8.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/Program Files (x86)/Latex/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Sprawozdanie_Zespół_2.pdf (22 pages, 2248743 bytes).
+cbx1440.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecti1200.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Marcin\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Marcin\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Ma
+rcin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk><F
+:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6
+.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr12.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr6.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><F:/Program Files (x86)/Latex/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb>
+Output written on Sprawozdanie_Zespół_2.pdf (26 pages, 2927442 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
+ 483 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
